@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { StyleSheet, TouchableOpacity, Image} from "react-native"
+import { StyleSheet, TouchableOpacity, TextInput, Image} from "react-native"
 import {Container, Label, Form, Input, Item} from 'native-base'
 
 export default class Login extends Component {
@@ -15,16 +15,12 @@ export default class Login extends Component {
             <Form style={{flex:1}}>
                 <Label style={{textAlign: 'center'}}>Botoes de Teste</Label>
             </Form>
-            <Form style={{flex: 2}}>
-                <Item>
-                    <Input placeholder='Email' />
-                </Item>
-                <Item style={{marginBottom: 20}}>
-                    <Input placeholder='Senha' />
-                </Item>
-                <Item style={loginButtonStyle} onPress={() => alert('Login')}>
+            <Form style={{flex: 2}} >
+                <TextInput placeholder='Email' style={inputStyleEmail}/>
+                <TextInput placeholder='Senha' style={inputStylePassword} />
+                <TouchableOpacity style={loginButtonStyle} onPress={() => alert('Login')}>
                     <Image source={require('../../img/loginbutton.png')} />
-                </Item>
+                </TouchableOpacity>
             </Form>
             <Form style={{flex: 1, alignItems: 'center'}} >
             <TouchableOpacity onPress={() => alert('Login Com Facebook')}>
@@ -59,12 +55,32 @@ const styles = StyleSheet.create({
   textLoginButtonStyle: {
     color: '#fff',
     textAlign: 'center',
-    padding: 15
+    padding: 17
   },
   loginButtonStyle: {
+      alignItems: 'center',
       borderColor: 'transparent',
       marginBottom: 20
-  }
+  },
+  inputStyleEmail: {
+      height: 40,
+      maxWidth: 350,
+      marginLeft:10,
+      borderColor: '#000',
+      borderWidth: 1.5,
+      borderRadius: 14,
+      marginBottom: 10
+  },
+  inputStylePassword: {
+    height: 40,
+    maxWidth: 350,
+    marginLeft:10,
+    borderColor: '#000',
+    borderWidth: 1.5,
+    borderRadius: 14,
+    marginBottom: 20},
+  
 })
 
-const {container, logoFormStyle, loginStyle, loginButtonStyle} = styles
+const {container, logoFormStyle, loginStyle, 
+        loginButtonStyle, inputStyleEmail, inputStylePassword } = styles
