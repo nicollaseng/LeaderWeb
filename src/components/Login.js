@@ -2,21 +2,24 @@ import React, { Component } from "react"
 import { StyleSheet, Text, View, Image} from "react-native"
 import {Container, Label, Form, Item} from 'native-base'
 
-import {Actions} from 'react-native-router-flux'
-
-export default class Standard extends Component {
+export default class Login extends Component {
 
   render() {
+
+    return (
+        <Text>Hello</Text>
+    )
+
     return (
         <Container style={container}>
         <Form style={logoFormStyle}> 
-          <Image source={require('../img/logo.png')} />
+          <Image source={require('../../img/logo.png')} />
         </Form>
         <Form style={sloganStyle}>
           <Form style={{flex:1}}>
             <Label style={{textAlign: 'center'}}>{this.props.description}</Label>
-            <Item onPress={() => Actions.login()} style={associatedStyle}>
-              <Image source={require('../img/callAssociated.png')} />
+            <Item onPress={() => alert('foi')} style={associatedStyle}>
+              <Image source={require('../../img/callAssociated.png')} />
             </Item>
           </Form>
         </Form>
