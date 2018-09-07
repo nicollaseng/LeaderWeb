@@ -1,27 +1,28 @@
 import React, { Component } from "react"
 import { StyleSheet, Text, View, Image} from "react-native"
-import {Container, Label, Form, Item} from 'native-base'
+import {Container, Label, Form, Input, Item} from 'native-base'
 
 export default class Login extends Component {
 
   render() {
 
     return (
-        <Text>Hello</Text>
-    )
-
-    return (
         <Container style={container}>
         <Form style={logoFormStyle}> 
           <Image source={require('../../img/logo.png')} />
         </Form>
-        <Form style={sloganStyle}>
-          <Form style={{flex:1}}>
-            <Label style={{textAlign: 'center'}}>{this.props.description}</Label>
-            <Item onPress={() => alert('foi')} style={associatedStyle}>
-              <Image source={require('../../img/callAssociated.png')} />
-            </Item>
-          </Form>
+        <Form style={loginStyle}>
+            <Form style={{flex:1}}>
+                <Label style={{textAlign: 'center'}}>Botoes de Teste</Label>
+            </Form>
+            <Form style={{flex: 2}}>
+                <Item>
+                    <Input placeholder='Email' />
+                </Item>
+                <Item>
+                    <Input placeholder='Senha' />
+                </Item>
+            </Form>
         </Form>
       </Container>
     )
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
-  sloganStyle: {
+  loginStyle: {
     flex: 2,
   },
   logoFormStyle: {
@@ -49,4 +50,4 @@ const styles = StyleSheet.create({
   }
 })
 
-const {container, logoFormStyle, associatedStyle, sloganStyle} = styles
+const {container, logoFormStyle, associatedStyle, loginStyle} = styles
